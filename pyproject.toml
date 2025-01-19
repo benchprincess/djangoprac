@@ -14,10 +14,31 @@ django-extensions = "^3.2.3"
 [tool.poetry.group.dev.dependencies]
 black = "^24.10.0"
 isort = "^5.13.2"
+mypy = "^1.14.1"
+django-stubs = "^5.1.2"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.black]
+line-length = 120
+
 [tool.isort]
 profile = "black"
+
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+python_version = 3.12
+strict = true # 제일 중요하고 제일 어려운 옵션. mypy를 엄격하게 만듦
+
+[[tool.mypy.overrides]]
+module = "*.migrations.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "manage"
+ignore_errors = true
+
+[tool.django-stubs]
+django_settings_module = "config.settings"
