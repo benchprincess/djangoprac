@@ -7,4 +7,4 @@ my_tuple: tuple[int, ...] = (
     3,
 )
 
-# temp 주석
+# temp 주석 추가
