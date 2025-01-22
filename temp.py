@@ -6,3 +6,5 @@ my_tuple: tuple[int, ...] = (
     1,
     3,
 )
+
+# temp 주석 추가
