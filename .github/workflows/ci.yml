@@ -11,7 +11,7 @@ jobs:
       DB_PORT: 3306
       DB_USER: root
       DB_PASSWORD: 1234
-      DB_DATABASE: oz_django6
+      DB_DATABASE: djangoprac
 
     steps:
       # github action 이미지는 기본적으로 checkout이 안되어있습니다.
