@@ -52,7 +52,8 @@ jobs:
           echo "${HOME}/.local/bin" >> $GITHUB_PATH
 
       - name: Install dependencies
-        run: poetry install
+        run: |
+          poetry install
 
       # --check 옵션은 파일을 수정하지 않고 black 규칙을 준수하는지 검증만 함
       # github action job의 기본 동작은, step이 실패할 경우에 이후 step으로 넘어가지 않음
