@@ -23,7 +23,7 @@ jobs:
         id: setup-python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.12
+          python-version: '3.12'
 
       # 각 step은 uses 혹은 run 둘 중 하나를 꼭 사용해야한다.
       # uses: 다른 사람이 미리 만들어놓은 action을 실행한다.
