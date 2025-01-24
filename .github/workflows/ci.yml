@@ -37,7 +37,7 @@ jobs:
       # Start Mysql
       # https://ovirium.com/blog/how-to-make-mysql-work-in-your-github-actions/
       - name: Start Mysql
-        run: |
+        run: |    
           sudo systemctl start mysql
           mysql -e "use mysql; FLUSH PRIVILEGES; ALTER USER '${{ env.DB_USER }}'@'localhost' IDENTIFIED BY '${{ env.DB_PASSWORD }}';" -uroot -proot
           mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
