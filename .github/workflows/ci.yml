@@ -12,6 +12,8 @@ jobs:
       DB_USER: root
       DB_PASSWORD: qwer1234
       DB_DATABASE: djangoprac
+      DJANGO_SETTINGS_MODULE: config.settings # Django 설정 파일 경로
+      PYTHONPATH: ${{ github.workspace }} # 프로젝트 루트를 PYTHONPATH에 추가
 
     steps:
       # github action 이미지는 기본적으로 checkout이 안되어있습니다.
@@ -66,7 +68,10 @@ jobs:
 
       - name: Run Mypy
         run: |
-          poetry run mypy . 
+          poetry run mypy .
+        env: # 추가 환경 변수 설정
+          DJANGO_SETTINGS_MODULE: config.settings
+          PYTHONPATH: ${{ github.workspace }}
 
       - name: Test python project
         run: |
