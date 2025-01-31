@@ -1,3 +1,5 @@
+from django.contrib.auth import user_logged_in
+
 from tabom.models import Article, Like, User
 
 
@@ -20,6 +22,5 @@ def do_like(user_id: int, article_id: int) -> Like:
     - db가 지켜줌(정합성을)
     - 따라서 지금은 크게 신경 안써도 됨
     """
-    like = Like.objects.create(user_id=user_id, article_id=article_id)
 
-    return like
+    return Like.objects.create(user_id=user_id, article_id=article_id)
